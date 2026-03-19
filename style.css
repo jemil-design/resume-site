@@ -1,0 +1,534 @@
+/* ===== CSS Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #000000 0%, #000000 50%, #51e2f5 100%);
+    background-attachment: fixed;
+    color: #e0e0e0;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #51e2f5;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #9df9ef;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== Navigation Bar (flexbox) ===== */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #000000;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(81, 226, 245, 0.2);
+}
+
+.nav-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #edf756;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #a28089;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffa8b6;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffa8b6;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    margin-top: 70px;
+    padding: 80px 40px;
+    text-align: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(81, 226, 245, 0.15) 100%);
+    border-bottom: 3px solid #ffa8b6;
+}
+
+.hero-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    color: #9df9ef;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-email a {
+    font-size: 1rem;
+    color: #51e2f5;
+    font-weight: 500;
+    border: 2px solid #51e2f5;
+    padding: 8px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-email a:hover {
+    background-color: #51e2f5;
+    color: #000000;
+}
+
+/* ===== Main Container ===== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Section Styling ===== */
+.section {
+    padding: 50px 0;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #edf756;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffa8b6;
+    display: inline-block;
+    font-weight: 700;
+}
+
+/* ===== Card Component ===== */
+.card {
+    background-color: rgba(10, 10, 10, 0.7);
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(81, 226, 245, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(81, 226, 245, 0.15);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #51e2f5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.card p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* ===== Education Section ===== */
+.education-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.current-education {
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(237, 247, 86, 0.25);
+}
+
+.current-education h3 {
+    color: #edf756;
+}
+
+.current-education ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.current-education ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1.05rem;
+    color: #ddd;
+}
+
+.current-education ul li:last-child {
+    border-bottom: none;
+}
+
+/* Education Table */
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.education-table thead tr {
+    background-color: rgba(81, 226, 245, 0.2);
+}
+
+.education-table th {
+    text-align: left;
+    padding: 12px 15px;
+    color: #51e2f5;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.education-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: top;
+}
+
+.education-table td:first-child {
+    font-weight: 600;
+    color: #9df9ef;
+    white-space: nowrap;
+    width: 140px;
+}
+
+.subject-list {
+    list-style: disc;
+    padding-left: 20px;
+    columns: 2;
+}
+
+.subject-list li {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    color: #bbb;
+}
+
+/* ===== Project Section ===== */
+.project-card {
+    border: 1px solid rgba(255, 168, 182, 0.25);
+}
+
+.project-card h3 {
+    color: #ffa8b6;
+}
+
+.project-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.project-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+/* ===== Activities Section (Grid) ===== */
+.activities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.activity-card .role {
+    font-weight: 500;
+    color: #ffa8b6;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.activity-card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.activity-card .sub-item {
+    list-style-type: circle;
+    margin-left: 15px;
+    font-size: 0.92rem;
+}
+
+/* ===== Interests Section (Flexbox) ===== */
+.interests-flex {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.interest-item {
+    background-color: rgba(81, 226, 245, 0.1);
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    border: 1px solid rgba(81, 226, 245, 0.25);
+    flex: 1;
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(81, 226, 245, 0.2);
+    background-color: rgba(81, 226, 245, 0.15);
+}
+
+.interest-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.interest-item p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.interest-item em {
+    color: #edf756;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* ===== Goals Section ===== */
+.goals-card {
+    border-left: 5px solid #edf756;
+}
+
+.goals-card p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #ccc;
+}
+
+/* ===== Footer ===== */
+#footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(81, 226, 245, 0.15) 100%);
+    border-top: 1px solid rgba(81, 226, 245, 0.15);
+    margin-top: 40px;
+}
+
+#footer p {
+    color: #a28089;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+#footer a {
+    color: #51e2f5;
+}
+
+#footer a:hover {
+    color: #9df9ef;
+}
+
+/* ==============================
+   MEDIA QUERIES - Responsive
+   ============================== */
+
+/* Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        padding: 12px 20px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        font-size: 0.8rem;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interests-flex {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .interest-item {
+        padding: 20px 25px;
+    }
+
+    .subject-list {
+        columns: 1;
+    }
+
+    .education-table td:first-child {
+        width: auto;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    #navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-section {
+        margin-top: 100px;
+        padding: 40px 15px;
+    }
+
+    .hero-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.9rem;
+    }
+
+    .hero-email a {
+        font-size: 0.85rem;
+        padding: 6px 18px;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        padding: 18px 20px;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .interests-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .interest-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .education-table th,
+    .education-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    #footer {
+        padding: 20px 15px;
+    }
+
+    #footer p {
+        font-size: 0.8rem;
+    }
+}
